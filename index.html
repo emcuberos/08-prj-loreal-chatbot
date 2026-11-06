@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -8,8 +8,10 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
@@ -19,26 +21,33 @@
     <div class="page-wrapper">
       <!------- Header / Branding ------->
       <header class="site-header">
-        <h1 class="site-title">Smart Product Advisor</h1>
+        <img class="site-logo" src="img/loreal-logo.png" alt="L'Oréal" />
+        <h1 class="site-title">Smart Routine & Product Advisor</h1>
       </header>
 
       <!------- Chat Area ------->
       <main>
         <section class="chatbox">
+          <div
+            id="latestQuestion"
+            class="latest-question"
+            aria-live="polite"
+            hidden
+          ></div>
           <div id="chatWindow" class="chat-window">
             <!-- messages will be appended here via JS -->
           </div>
 
           <form id="chatForm" class="chat-form">
             <label for="userInput" class="visually-hidden">Message</label>
-            <input
+            <textarea
               id="userInput"
               name="userInput"
-              type="text"
+              rows="1"
               placeholder="Ask me about products or routines…"
               autocomplete="off"
               required
-            />
+            ></textarea>
             <button type="submit" id="sendBtn">
               <span class="material-icons">send</span>
               <span class="visually-hidden">Send</span>
